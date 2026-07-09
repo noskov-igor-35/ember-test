@@ -3,13 +3,14 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   actions: {
     save() {
-      var book = this.store.createRecord('book', {
+      var book = this.get('model');
+      book.setProperties({
         title: this.get('title'),
         author: this.get('author'),
         rating: parseFloat(this.get('rating'))
       });
-      book.save().then((savedBook) => {
-        this.transitionToRoute('books.edit', savedBook);
+      book.save().then(() => {
+        this.transitionToRoute('books');
       }).catch(() => {
         alert('Ошибка при сохранении');
       });

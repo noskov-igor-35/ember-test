@@ -23,7 +23,7 @@
         <img src="https://img.magnific.com/free-psd/book-day-illustration_23-2151969268.jpg?semt=ais_hybrid&w=740" alt="{{ book.title }}">
         <div class="caption">
           <h3>{{ book.title }}</h3>
-          <p>{{ book.autor }}</p>
+          <p>{{ book.author }}</p>
           <p>
             <div class="progress">
               <div 
@@ -37,7 +37,7 @@
             </div>
           </p>
           <p>
-            <a href="#" class="btn btn-primary" role="button">Изменить</a>
+            <a href="books/{{book.id}}/edit" class="btn btn-primary" role="button">Изменить</a>
             <button type="button" class="btn btn-default" {{ action "deleteBook" book }}>Удалить</button>
           </p>
         </div>
