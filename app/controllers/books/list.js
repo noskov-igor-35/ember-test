@@ -8,7 +8,8 @@ export default Ember.Controller.extend({
     var books = this.get('model');
     var search = this.get('searchQuery').toLowerCase().trim();
     var tag = this.get('tagQuery').toLowerCase().trim();
-
+    console.log(books)
+    
     return books.filter(function(book) {
       var matchesSearch = !search ||
         book.get('title').toLowerCase().indexOf(search) !== -1 ||

@@ -1,0 +1,47 @@
+<div class="row mb-16">
+  <div class="col-sm-4 col-md-2">
+    <div class="input-group">
+      {{input value=searchQuery class="form-control" placeholder="Поиск"}}
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true" {{ action "resetFilters"}}></span>
+        </button>
+      </span>
+    </div>
+  </div>
+  <div class="col-sm-8 col-md-10">
+    <a href="books/new" class="btn btn-primary pull-right" role="button">Новая книга</a>
+  </div>
+  <!--<div class="col-sm-2 col-md-1">
+    {{input value=tagQuery class="form-control" placeholder="Поиск по тегам"}}
+  </div>-->
+</div>
+<div class="row mb-16">
+  {{#each filteredBooks as |book|}}
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="https://img.magnific.com/free-psd/book-day-illustration_23-2151969268.jpg?semt=ais_hybrid&w=740" alt="{{ book.title }}">
+        <div class="caption">
+          <h3>{{ book.title }}</h3>
+          <p>{{ book.autor }}</p>
+          <p>
+            <div class="progress">
+              <div 
+                class="progress-bar"
+                role="progressbar"
+                style="width: {{ multiply book.rating }}%;"
+                aria-valuenow="{{ book.rating }}"
+                aria-valuemin="0"
+                aria-valuemax="10">
+                {{ multiply book.rating }}%</div>
+            </div>
+          </p>
+          <p>
+            <a href="#" class="btn btn-primary" role="button">Изменить</a>
+            <button type="button" class="btn btn-default" {{ action "deleteBook" book }}>Удалить</button>
+          </p>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+</div>

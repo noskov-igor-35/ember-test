@@ -1,0 +1,23 @@
+<div class="container h-100">
+  <div class="htop">
+    <h2 class="text-center">Новая книга</h2>
+    <div class="row edit-form">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="form-group">
+          <label>Название</label>
+          {{input value=title class="form-control" placeholder="Название книги"}}
+        </div>
+        <div class="form-group">
+          <label>Автор</label>
+          {{input value=author class="form-control" placeholder="Автор"}}
+        </div>
+        <div class="form-group">
+          <label>Рейтинг</label>
+          {{input value=rating type="number" step="0.1" class="form-control" placeholder="4.5"}}
+        </div>
+        <button class="btn btn-success" {{action "save"}}>Сохранить</button>
+        <button class="btn btn-default" {{action "cancel"}}>Отмена</button>
+      </div>
+    </div>
+  </div>
+</div>
