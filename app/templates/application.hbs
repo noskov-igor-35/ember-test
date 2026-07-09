@@ -1,3 +1,27 @@
-<h2 id="title">Welcome to Ember</h2>
-<button type="button" class="btn btn-default navbar-btn">Sign in</button>
-{{outlet}}
+<div class="app_padding_24">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="nav navbar-nav navigation-main">
+        <li class="nav-item active">
+          <a class="nav-link" href="">Рабочий стол <span class="sr-only">(текущий)</span></a>
+        </li>
+        <!--<li class="nav-item">
+          <a class="nav-link" href="meetings">Встречи клуба</a>
+        </li>-->
+        <li class="nav-item">
+          <a class="nav-link" href="books">Книги</a>
+        </li>
+        <!--<li class="nav-item">
+          <a class="nav-link" href="speakers">Спикеры</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-success" href="#">Оставить заявку</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-primary" href="#">Запланировать</a>
+        </li>-->
+      </ul>
+    </div>
+  </nav>
+  {{outlet}}
+</div>
